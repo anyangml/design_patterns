@@ -1,0 +1,36 @@
+@startuml
+
+class CNN{
+
+    subscribers
+
+    addSubscriber()
+    removeSubcriber()
+    publish()
+}
+abstract class Publisher << Interface >>{
+
+    addSubscriber()
+    removeSubcriber()
+    publish()
+
+}
+
+abstract class Subscriber << Interface >>{
+    update()
+}
+Publisher --> Subscriber
+Publisher <|-- CNN
+class GoldTier{
+    update()
+}
+class SilverTier{
+    update()
+}
+
+Subscriber <|-- GoldTier
+Subscriber <|-- SilverTier
+CNN <-- GoldTier
+CNN <-- SilverTier
+
+@enduml
