@@ -6,23 +6,18 @@ from abc import abstractmethod
 class Character():
     
     def __init__(self) -> None:
-        self._strategy = None
-
-    @property
-    def strategy(self) -> WeaponBehavior:
-        return self._strategy
-    
-    @strategy.setter
-    def strategy(self, strategy: WeaponBehavior) -> None:
-        self._strategy = strategy
+        self._weapon: WeaponBehavior = None
 
     def fight(self) -> None:
-        self.strategy.use_weapon()
+        self._weapon.use_weapon()
     
-    def set_weapon(self, strategy: WeaponBehavior) -> None:
-        self._strategy = strategy
+    def set_weapon(self, weapon: WeaponBehavior) -> None:
+        self._weapon = weapon
 
 class WeaponBehavior(ABC):
+    """
+    This is an interface
+    """
     @abstractmethod
     def use_weapon(self) -> None:
         pass
@@ -36,14 +31,17 @@ class SwordBehavior(WeaponBehavior):
         print("Using sword")
 
 """
+This would be the concret class of abstract class Character, 
+if polymorphism is used.
+
 class King(Character):
     def __init__(self) -> None:
         self.strategy = SwordBehavior()
-
 """
+
 if __name__ == "__main__":
     king = Character()
-    king.strategy = SwordBehavior()
+    king.set_weapon(SwordBehavior())
     king.fight()
-    king.strategy = KnifeBehavior()
+    king.set_weapon(KnifeBehavior())
     king.fight()
