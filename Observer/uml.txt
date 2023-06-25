@@ -30,5 +30,7 @@ class SilverTier{
 
 Subscriber <|-- GoldTier
 Subscriber <|-- SilverTier
+CNN <-- GoldTier
+CNN <-- SilverTier
 
 @enduml
