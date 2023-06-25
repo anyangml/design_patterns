@@ -4,7 +4,7 @@ abstract class WeaponBehavior  << Interface >> {
     + useWeapon()
 }
 
-abstract class Character {
+class Character {
 
     WeaponBehavior weapon
     
