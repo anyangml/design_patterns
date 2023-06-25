@@ -2,30 +2,31 @@
 
 class CNN{
 
-    subscribers
+    - subscribers
+    - latest_news
 
-    addSubscriber()
-    removeSubcriber()
-    publish()
+    + addSubscriber()
+    + removeSubcriber()
+    + publish()
 }
 abstract class Publisher << Interface >>{
 
-    addSubscriber()
-    removeSubcriber()
-    publish()
+    + addSubscriber()
+    + removeSubcriber()
+    + publish()
 
 }
 
 abstract class Subscriber << Interface >>{
-    update()
+    + update()
 }
 Publisher --> Subscriber
 Publisher <|-- CNN
 class GoldTier{
-    update()
+    + update()
 }
 class SilverTier{
-    update()
+    + update()
 }
 
 Subscriber <|-- GoldTier
