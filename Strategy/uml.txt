@@ -6,7 +6,7 @@ abstract class WeaponBehavior  << Interface >> {
 
 class Character {
 
-    WeaponBehavior weapon
+    - WeaponBehavior weapon
     
     + fight()
     + setWeapon()
