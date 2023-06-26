@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Beverage{
+    + cost()
+}
+
+abstract class AddonDecorator{
+    + cost()
+}
+
+class Sugar{
+     + cost()
+     }
+class Milk{ 
+    + cost()
+    }
+
+class Tea{ 
+    + cost()
+    }
+
+class Coffee{ 
+    + cost()
+    }
+
+Beverage <|-- Tea
+Beverage <|-- Coffee
+
+Beverage <|-- AddonDecorator
+Beverage <-- AddonDecorator
+
+AddonDecorator <|-- Sugar
+AddonDecorator <|-- Milk
+
+@enduml
