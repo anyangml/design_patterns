@@ -1,0 +1,26 @@
+@startuml
+
+abstract class Factory <<Interface>> {
+    + build_product: Product
+}
+
+class AncientFactory{
+    + build_product: Product
+}
+
+class MordenFactory{
+    + build_product: Product
+}
+
+Factory <|-- AncientFactory
+Factory <|-- MordenFactory
+
+abstract class Product{
+    + show
+}
+
+Product <|-- AncientProduct
+Product <|-- MordenProduct
+
+
+@enduml
