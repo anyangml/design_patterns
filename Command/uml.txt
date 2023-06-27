@@ -1,0 +1,37 @@
+@startuml
+
+class Invoker{
+    + commandA: Command
+    + commandB: Command
+}
+
+abstract class Command <<Interface>>{
+    + execute()
+    + undo()
+}
+
+Invoker --> Command
+
+class ConcreteReceiver{
+    + actionA()
+    + undoA()
+    + actionB()
+    + undoB()
+}
+
+class ConcreteCommandA{
+    + execute(ConcreteReceiver)
+    + undo(ConcreteReceiver)
+}
+
+class ConcreteCommandB{
+    + execute(ConcreteReceiver)
+    + undo(ConcreteReceiver)
+}
+
+Command <|-- ConcreteCommandA
+Command <|-- ConcreteCommandB
+
+ConcreteCommandA --> ConcreteReceiver
+ConcreteCommandB --> ConcreteReceiver
+@enduml
