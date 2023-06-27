@@ -1,6 +1,6 @@
-# Strategy Pattern
+# Factory Pattern
 
-![Strategy_UML](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/anyangml/design_patterns/main/Factory/uml.txt)
+![Factory_UML](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/anyangml/design_patterns/main/Factory/uml.txt)
 
 
 ## Thought 
