@@ -1,0 +1,22 @@
+@startuml
+
+abstract class Service <<Interface>>{
+    + request()
+}
+
+class Proxy{
+    - realservice : Service
+    - allowed
+    + request()
+    + check()
+}
+
+class HiddenService{
+    + request()
+}
+
+Service <|-- HiddenService
+HiddenService <-- Proxy
+Service <|-- Proxy
+
+@enduml
