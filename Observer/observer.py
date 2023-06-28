@@ -15,10 +15,12 @@ class Publisher(ABC):
     def publish(self) -> None:
         pass
 
+
 class Subscriber(ABC):
     @abstractmethod
-    def update(self,publisher:Publisher) -> None:
+    def update(self, publisher: Publisher) -> None:
         pass
+
 
 class CNN(Publisher):
     _subscribers = []
@@ -39,6 +41,7 @@ class CNN(Publisher):
         self._latest_news = latest_news
         self.publish()
 
+
 """
 The following classes are the subscribers implemented in a 'pull' manner, 
 alternatively, the subscribers could be implemented in a 'push' manner.
@@ -47,13 +50,16 @@ concrete subscriber class would be able to access the '_latest_news' variable
 without accessing the 'CNN' class.
 """
 
+
 class GoldTier(Subscriber):
-    def update(self, publiser:CNN) -> None:
+    def update(self, publiser: CNN) -> None:
         print(f"Hi Gold Member, the latest news is {publiser._latest_news}")
 
+
 class SilverTier(Subscriber):
-    def update(self, publiser:CNN) -> None:
+    def update(self, publiser: CNN) -> None:
         print(f"Hi Silver Member, the latest news is {publiser._latest_news}")
+
 
 if __name__ == "__main__":
     cnn = CNN()

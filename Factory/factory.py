@@ -1,31 +1,38 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 
+
 class Factory(ABC):
     @abstractmethod
     def build_product(self) -> Product:
         pass
+
 
 class Product(ABC):
     @abstractmethod
     def show(self) -> None:
         pass
 
+
 class AncientFactory(Factory):
     def build_product(self) -> Product:
         return AncientProduct()
+
 
 class MordenFactory(Factory):
     def build_product(self) -> Product:
         return MordenProduct()
 
+
 class AncientProduct(Product):
     def show(self) -> None:
         print("AncientProduct")
 
+
 class MordenProduct(Product):
     def show(self) -> None:
         print("MordenProduct")
+
 
 if __name__ == "__main__":
     ancient_factory = AncientFactory()
