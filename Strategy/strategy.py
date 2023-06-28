@@ -3,32 +3,36 @@ from abc import ABC
 from abc import abstractmethod
 
 
-class Character():
-    
+class Character:
     def __init__(self) -> None:
         self._weapon: WeaponBehavior = None
 
     def fight(self) -> None:
         self._weapon.use_weapon()
-    
+
     def set_weapon(self, weapon: WeaponBehavior) -> None:
         self._weapon = weapon
+
 
 class WeaponBehavior(ABC):
     """
     This is an interface
     """
+
     @abstractmethod
     def use_weapon(self) -> None:
         pass
+
 
 class KnifeBehavior(WeaponBehavior):
     def use_weapon(self) -> None:
         print("Using knife")
 
+
 class SwordBehavior(WeaponBehavior):
     def use_weapon(self) -> None:
         print("Using sword")
+
 
 """
 This would be the concret class of abstract class Character, 

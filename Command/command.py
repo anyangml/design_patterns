@@ -1,9 +1,11 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 
-class Invoker():
+
+class Invoker:
     commandA: Command = None
     commandB: Command = None
+
 
 class Command(ABC):
     @abstractmethod
@@ -13,6 +15,7 @@ class Command(ABC):
     @abstractmethod
     def undo(self) -> None:
         pass
+
 
 class ConcreteCommandA(Command):
     def __init__(self, receiver: ConcreteReceiver) -> None:
@@ -24,6 +27,7 @@ class ConcreteCommandA(Command):
     def undo(self) -> None:
         self.receiver.undoA()
 
+
 class ConcreteCommandB(Command):
     def __init__(self, receiver: ConcreteReceiver) -> None:
         self.receiver = receiver
@@ -34,7 +38,8 @@ class ConcreteCommandB(Command):
     def undo(self) -> None:
         self.receiver.undoB()
 
-class ConcreteReceiver():
+
+class ConcreteReceiver:
     def actionA(self) -> None:
         print("Action A")
 
@@ -46,6 +51,7 @@ class ConcreteReceiver():
 
     def undoB(self) -> None:
         print("Undo B")
+
 
 if __name__ == "__main__":
     invoker = Invoker()
