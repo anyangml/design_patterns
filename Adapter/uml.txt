@@ -1,0 +1,24 @@
+@startuml
+
+abstract class Target <<Interface>>{
+    + request()
+}
+
+class Adapter{
+    - adaptee: Adaptee
+    + request()
+}
+
+Target <|-- Adapter
+
+class Adaptee{
+    + processed_request()
+}
+Adapter --> Adaptee
+
+class Client{
+    + target: Target
+}
+
+Target <-- Client
+@enduml
