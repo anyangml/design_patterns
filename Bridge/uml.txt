@@ -1,0 +1,34 @@
+@startuml
+
+abstract class Display <<Interface>>{
+    + resource : Resource
+    + show()
+}
+
+class WebDisplay{
+    + show()
+}
+
+class PhoneDisplay{
+    + show()
+}
+
+abstract class Resource <<Interface>>{
+    + summary()
+}
+
+class FictionResource{
+    + summary()
+}
+
+class NovelResource{
+    + summary()
+}
+
+Display --> Resource
+WebDisplay --|> Display
+PhoneDisplay --|> Display
+FictionResource --|> Resource
+NovelResource --|> Resource
+
+@enduml
