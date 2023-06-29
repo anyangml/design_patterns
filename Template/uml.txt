@@ -1,0 +1,22 @@
+@startuml
+
+abstract class Template{
+
+    + basemethod()
+    + hook()
+    + abstractmethod()
+}
+
+class ConcreteOne{
+    + abstractmethod()
+}
+
+class ConcreteTwo{
+    + hook()
+    + abstractmethod()
+}
+
+Template <|-- ConcreteOne
+Template <|-- ConcreteTwo
+
+@enduml
