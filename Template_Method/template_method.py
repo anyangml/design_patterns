@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Template(ABC):
     def basemethod(self):
         print("base method")
@@ -11,9 +12,11 @@ class Template(ABC):
     def abstractmethod(self):
         pass
 
+
 class ConcreteOne(Template):
     def abstractmethod(self):
         print("concrete one")
+
 
 class ConcreteTwo(Template):
     def abstractmethod(self):

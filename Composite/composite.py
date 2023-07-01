@@ -1,8 +1,8 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 
-class MenuComponent(ABC):
 
+class MenuComponent(ABC):
     def add(self) -> None:
         pass
 
@@ -15,8 +15,8 @@ class MenuComponent(ABC):
     def getPrice(self) -> float:
         pass
 
-class Menu(MenuComponent):
 
+class Menu(MenuComponent):
     def __init__(self) -> None:
         self.menuComponents = []
 
@@ -29,13 +29,14 @@ class Menu(MenuComponent):
     def getChild(self, i: int) -> MenuComponent:
         return self.menuComponents[i]
 
-class MenuItem(MenuComponent):
 
+class MenuItem(MenuComponent):
     def __init__(self, price: float) -> None:
         self.price = price
 
     def getPrice(self) -> float:
         return self.price
+
 
 if __name__ == "__main__":
     lunc_menu = Menu()

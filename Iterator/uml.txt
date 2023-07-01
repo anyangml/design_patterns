@@ -1,0 +1,27 @@
+@startuml
+
+abstract class Iterator <<Interface>>{
+    + get_next()
+    + have_next()
+}
+
+class ConcreteIterator{
+    + get_next()
+    + have_next()
+}
+
+Iterator <|-- ConcreteIterator
+
+abstract class Aggregate <<Interface>>{
+    + create_iterator() : Iterator
+}
+
+class ConcreteAggregate{
+    + create_iterator() : Iterator
+}
+
+Aggregate <|-- ConcreteAggregate
+Aggregate --> Iterator
+ConcreteAggregate --> ConcreteIterator
+
+@enduml
