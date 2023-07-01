@@ -1,0 +1,26 @@
+@startuml
+
+abstract class State <<Interface>>{
+    + handle_request()
+}
+
+class OnState{
+    + handle_request()
+}
+
+class OffState{
+    + handle_request()
+}
+
+State <|-- OffState
+State <|-- OnState
+
+class TV{
+    - state
+    - set_state(State)
+    + operate()
+}
+
+TV --> State
+
+@enduml
